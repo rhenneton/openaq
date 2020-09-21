@@ -6,6 +6,7 @@ From there, we poll the SQS data and save it in an SQL database (RDS). In order 
 
 On that EC2 instance, we also deploy a "dashboard" python docker image that serves the results on a map, on port 8050.
 
+For now, all the data is kept in the database as we don't have a lot of datapoints ingested every day (roughly 500 on Monday), but we could imagine having an archiving mechanism that clears the old data and saves them in S3.
 
 # Build instruction
 In order to build the docker image, from the main directory (the one with the dockerfile), run :
