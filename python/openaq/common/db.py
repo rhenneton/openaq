@@ -30,10 +30,9 @@ def get_session():
     return session
 
 
-session = get_session()
-
-
 def add_measure_to_db(measure: Measure):
+    session = get_session()
     session.merge(measure)
     session.commit()
     session.flush()
+    session.close()

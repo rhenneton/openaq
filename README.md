@@ -27,3 +27,27 @@ docker run  -d --name dashboard-container -p 8050:8050 --env-file .env openaq-ro
 ```
 
 Then, you should be able to see the webservice on port 8050
+
+# On an EC2 instance (Linux Ami)
+
+- Install git
+```
+sudo yum update -y
+sudo yum install git -y
+```
+- Clone the repo 
+```
+sudo yum update -y
+sudo yum install git -y
+git clone https://github.com/rhenneton/openaq.git
+```
+
+- Install docker
+
+```
+sudo yum install docker -y
+sudo service docker start
+sudo usermod -a -G docker ec2-user
+```
+Log out then log-in again and you have docker without sudo
+
